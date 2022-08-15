@@ -1,17 +1,16 @@
-package com.json.gson_test1.Label;
+package com.json.gson_test1.model;
+
+
+import com.json.gson_test1.repository.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Label {
+public class Label   {
 
     private Integer id;
     private String name;
 
-    public Label(Integer id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 
     public Integer getId() {
         return id;
