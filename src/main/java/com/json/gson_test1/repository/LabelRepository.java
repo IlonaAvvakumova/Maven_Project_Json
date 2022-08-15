@@ -2,12 +2,14 @@ package com.json.gson_test1.repository;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.json.gson_test1.controller.Controller;
 import com.json.gson_test1.model.Label;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LabelRepository {
 
@@ -35,7 +37,10 @@ public class LabelRepository {
         return null;
     }
 
-    public void deleteById(Integer id) {
+    public void deleteById(List<Label> listlabel) {
+         System.out.println("Какой id нужно удалить?");
+        Integer answer3 =  Controller.scanInteger();
 
+        List<Label> list3 = listlabel.stream().dropWhile(a->a.getId()==answer3).collect(Collectors.toList());
     }
 }

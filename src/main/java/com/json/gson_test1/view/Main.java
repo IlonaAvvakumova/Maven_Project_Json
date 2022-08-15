@@ -14,7 +14,8 @@ public class Main {
         LabelRepository lab = new LabelRepository();
         LabelController label = new LabelController();
         Label la = null;
-        List<Label> listlabel = new ArrayList<>();
+       // List<Label> listlabel = new ArrayList<>();
+        List<Label> listlabel = lab.getAll();
         System.out.println("Ввести книгу? да или нет?");
         Scanner scan = new Scanner(System.in);
         String answer = scan.nextLine();
@@ -36,13 +37,13 @@ public class Main {
 
         System.out.println("Книга под id: " + answer2 + " - " + list2);
 
-        System.out.println("Какой id нужно удалить?");
+    /*    System.out.println("Какой id нужно удалить?");
         Integer answer3 = scan.nextInt();
 
         List<Label> list3 = listlabel.stream().dropWhile(a->a.getId()==answer3).collect(Collectors.toList());
 
-
-
+*/
+       lab.deleteById(listlabel);
     }
 
 }
